@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas Ecobici 🚲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .plot {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .plot:hover {
+            transform: translateY(-5px);
+        }
+        .plot h2 {
+            font-size: 1.2em;
+            padding: 15px;
+            margin: 0;
+            background-color: #009a44;
+            color: #fff;
+        }
+        .plot-content {
+            padding: 15px;
+        }
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .description {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .repositories {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .repositories-toggle {
+            color: #2980b9;
+            margin-bottom: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toggle-icon {
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        .repositories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .repositories li {
+            margin-bottom: 10px;
+        }
+
+        .repositories a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .repositories a:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .view-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #2ea7cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            flex: 1;
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        .view-link:hover {
+            background-color: #27ae60;
+        }
+
+        .code-link {
+            background-color: #2ea7cc;
+        }
+
+        .code-link:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualizaciones y análisis del sistema Ecobici 🚲(Ciudad de México)</h1>
+    <div class="description">
+      <p>A lo largo de los años he estado visualizando los <a href="https://ecobici.cdmx.gob.mx/datos-abiertos/" target="_blank"> de uso del sistema de bicicletas compartidas Ecobici </a> en la Ciudad de México. Las gráficas muestran patrones de uso, demografía de usuarios, distribución geográfica de viajes y más, ofreciendo una visión del impacto y funcionamiento del sistema en la movilidad urbana.
+        La mayoría de estas gráficas se hicieron en diferentes periodos de tiempo entre 2018 y 2020.
+      </p>
+  </div>
+  <div class="repositories">
+    <h2 class="repositories-toggle">Código <span class="toggle-icon">▼</span></h2>
+    <div class="repositories-content" style="display: none;">
+        <ul>
+            <li><a href="ecobici_graficas_2019.html" target="_blank">Notebook con viz demográficas y uso de Ecobici</a></li>
+        </ul>
+    </div>
+  </div>
+    <div class="grid">
+          <div class="plot">
+              <h2>Viajes por Mes</h2>
+              <div class="plot-content">
+                  <img src="plots/viajes_x_mes.png" alt="Viajes por Mes" class="thumbnail">
+                  <a href="plots/viajes_por_mes.html" class="view-link" target="_blank">Ver gráfica completa</a>
+              </div>
+          </div>
+          <div class="plot">
+            <h2>Pirámide de Sexo y Edad</h2>
+            <div class="plot-content">
+                <img src="plots/piramide_sexo_edad.png" alt="Pirámide de Sexo y Edad" class="thumbnail">
+                <a href="plots/viajes_por_sexo_edad_piramide.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+          <h2>Viajes por Sexo y Edad</h2>
+          <div class="plot-content">
+            <img src="plots/barras_x_sexo_edad.png" alt="Barras por Sexo y Edad" class="thumbnail">
+            <a href="plots/viajes_por_sexo_edad_barras.html" class="view-link" target="_blank">Ver gráfica completa</a>
+          </div>
+        </div>
+        <div class="plot">
+            <h2>Proporción de Mujeres</h2>
+            <div class="plot-content">
+                <img src="plots/proporcion_mujeres.png" alt="Proporción de Mujeres" class="thumbnail">
+                <a href="plots/proporcion_mujeres.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Heatmap de Viajes por Día y Hora</h2>
+            <div class="plot-content">
+                <img src="plots/heatmap_viajes_por_dia_hora.png" alt="Heatmap de Viajes por Día y Hora" class="thumbnail">
+                <a href="plots/heatmap_viajes_por_dia_hora.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+          <h2>Duración de Viajes por Día y Hora</h2>
+          <div class="plot-content">
+              <img src="plots/duracion_viajes_x_dia_hora.gif" alt="Duración de Viajes por Día y Hora" class="thumbnail">
+              <a href="plots/duracion_viajes_por_dia_hora.html" class="view-link" target="_blank">Ver gráfica completa</a>
+          </div>
+      </div>
+        <div class="plot">
+            <h2>Heatmap de Viajes entre Colonias</h2>
+            <div class="plot-content">
+                <img src="plots/heatmap_viajes_entre_colonias.png" alt="Heatmap de Viajes entre Colonias" class="thumbnail">
+                <a href="plots/heatmap_viajes_entre_colonias.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Mapa de Viajes por Colonia de Arribo</h2>
+            <div class="plot-content">
+                <img src="plots/mapa viajes por colonia de arribo.png" alt="Mapa de Viajes por Colonia de Arribo" class="thumbnail">
+                <a href="plots/Viajes de Ecobici por colonia de arribo.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Mapa de Viajes por Colonia de Retiro</h2>
+            <div class="plot-content">
+                <img src="plots/mapa_viajes_por_colonia_retiro.png" alt="Mapa de Viajes por Colonia de Retiro" class="thumbnail">
+                <a href="plots/Viajes de Ecobici por colonia de retiro.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Mapa de red de viajes por hora, 2019</h2>
+            <div class="plot-content">
+                <img src="plots/red_x_hora_2019.gif" alt="Red por Hora 2019" class="thumbnail">
+                <a href="plots/red_x_hora_2019.gif" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+          <h2>Disponibilidad de las estaciones en un día de 2019</h2>
+          <div class="plot-content">
+              <img src="plots/animacion_disponibilidad.gif" alt="Disponibilidad de las estaciones" class="thumbnail">
+              <a href="plots/disponibilidad.html" class="view-link" target="_blank">Ver gráfica completa</a>
+          </div>
+        </div>
+        <div class="plot">
+            <h2>Animación de viajes de Ecobici en un día de 2019</h2>
+            <div class="plot-content">
+                <img src="plots/animacion_viajes.gif" alt="Viajes de Ecobici" class="thumbnail">
+                <a href="plots/ruta_ecobici.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Animación del uso de estaciones de Ecobici en un día de 2019</h2>
+            <div class="plot-content">
+                <img src="plots/animacion_uso_estaciones.png" alt="Uso de Estaciones" class="thumbnail">
+                <a href="plots/uso_estaciones.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Total de viajes por estación de arribo, 2019</h2>
+            <div class="plot-content">
+                <img src="plots/viajes_x_estacion_arribo.gif" alt="Viajes por Estación de Arribo" class="thumbnail">
+                <a href="plots/viajes_por_estacion_arribo_x_hora_2019.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+        <div class="plot">
+            <h2>Total de viajes por estación de retiro, 2019</h2>
+            <div class="plot-content">
+                <img src="plots/viajes_x_estacion_retiro.gif" alt="Viajes por Estación de Retiro" class="thumbnail">
+                <a href="plots/viajes_por_estacion_retiro_x_hora_2019.html" class="view-link" target="_blank">Ver gráfica completa</a>
+            </div>
+        </div>
+      <div class="plot video">
+          <h2>Viajes de Ecobici en un día (Matplotlib)</h2>
+          <div class="plot-content">
+              <iframe width="100%" height="200" src="https://www.youtube.com/embed/SQ3m7Ep0JXc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=SQ3m7Ep0JXc" class="view-link" target="_blank">Ver video completo</a>
+                <a href="https://gist.github.com/jjsantos01/070a01ca777359328f3cbd83cc728747" class="view-link code-link" target="_blank">Ver código</a>
+              </div>
+          </div>
+      </div>
+      <div class="plot video">
+        <h2>Mi uso de Ecibici en 2020</h2>
+        <div class="plot-content">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/3fNVGx_wksk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="button-group">
+              <a href="https://www.youtube.com/watch?v=3fNVGx_wksk" class="view-link" target="_blank">Ver video completo</a>
+              <a href="https://gist.github.com/jjsantos01/c119eb434e8094583700b850f52ffb6e" class="view-link code-link" target="_blank">Ver código</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+      document.querySelector('.repositories-toggle').addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.toggle-icon');
+          if (content.style.display === "none") {
+              content.style.display = "block";
+              icon.textContent = "▲";
+          } else {
+              content.style.display = "none";
+              icon.textContent = "▼";
+          }
+      });
+  </script>
+</body>
+</html>
