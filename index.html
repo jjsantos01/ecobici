@@ -127,6 +127,22 @@
         .code-link:hover {
             background-color: #27ae60;
         }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -271,6 +287,13 @@
         </div>
     </div>
     </div>
+    <footer class="footer">
+      <p>Elaborado por
+          <a href="https://twitter.com/jjsantoso" target="_blank" rel="noopener noreferrer">@jjsantoso</a>
+          (<a href="https://github.com/jjsantos01" target="_blank" rel="noopener noreferrer">GitHub</a>)
+      </p>
+    </footer>
+
     <script>
       document.querySelector('.repositories-toggle').addEventListener('click', function() {
           var content = this.nextElementSibling;
